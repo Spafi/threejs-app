@@ -1,0 +1,45 @@
+{
+  "name": "three-app",
+  "version": "0.0.1",
+  "packageManager": "^yarn@1.22.18",
+  "scripts": {
+    "dev-webpack": "webpack serve --mode development --config webpack.config.js",
+    "build-prod-webpack": "webpack --mode production",
+    "dev-parcel": "parcel src/public/index.html",
+    "build-prod-parcel": "parcel build src/public/index.html --public-url ./"
+  },
+  "dependencies": {
+    "@types/three": "^0.149.0",
+    "dat.gui": "^0.7.9",
+    "gsap": "^3.11.4",
+    "inversify": "^6.0.1",
+    "inversify-inject-decorators": "^3.1.0",
+    "lodash-es": "4.17.21",
+    "onmyjs": "^2.0.2",
+    "reflect-metadata": "^0.1.13",
+    "three": "^0.150.1",
+    "three-addons": "^1.2.0",
+    "tsconfig-paths-autogen": "^2.0.2",
+    "tslib": "^2.5.0",
+    "parcel-plugin-typescript": "^1.0.0"
+  },
+  "devDependencies": {
+    "@parcel/config-default": "^2.8.3",
+    "@parcel/plugin": "^2.0.0",
+    "@parcel/transformer-sass": "2.8.3",
+    "@types/lodash-es": "4.17.6",
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "parcel": "^2.0.0",
+    "parcel-reporter-static-files-copy": "^1.5.0",
+    "parcel-resolver-ts-base-url": "^1.3.1",
+    "process": "^0.11.10",
+    "sass": "^1.59.3",
+    "ts-loader": "^9.4.2",
+    "tsconfig-paths-webpack-plugin": "^4.0.1",
+    "typescript": "^5.0.2",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.12.0"
+  }
+}

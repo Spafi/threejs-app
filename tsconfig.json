@@ -1,0 +1,73 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "declaration": false,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "outDir": "dist",
+    "baseUrl": "./src",
+    "paths": {
+      "~components/*": [
+        "app/components/*"
+      ],
+      "~config/*": [
+        "app/config/*"
+      ],
+      "~core/*": [
+        "app/core/*"
+      ],
+      "~modules/*": [
+        "app/modules/*"
+      ],
+      "~services/*": [
+        "app/services/*"
+      ],
+      "~shaders/*": [
+        "app/shaders/*"
+      ],
+      "~state/*": [
+        "app/state/*"
+      ],
+      "~utils/*": [
+        "app/utils/*"
+      ],
+      "~app/*": [
+        "app/*"
+      ],
+      "~models/*": [
+        "assets/models/*"
+      ],
+      "~textures/*": [
+        "assets/textures/*"
+      ],
+      "~assets/*": [
+        "assets/*"
+      ],
+      "~environments/*": [
+        "environments/*"
+      ],
+      "~public/*": [
+        "public/*"
+      ],
+      "~styles/*": [
+        "styles/*"
+      ],
+      "~/*": [
+        "../*"
+      ]
+    },
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}
