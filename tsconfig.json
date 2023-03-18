@@ -13,6 +13,9 @@
     "sourceMap": true,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": ["es6", "dom"],
+    "types": ["reflect-metadata"],
     "outDir": "dist",
     "baseUrl": "./src",
     "paths": {

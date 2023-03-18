@@ -3,6 +3,7 @@ import { UpdatableObject } from '~components/interfaces/updatable-object.interfa
 
 export default class Sphere implements UpdatableObject {
     mesh: THREE.Mesh;
+
     velocity: number;
 
     constructor( radius: number, color: number ) {

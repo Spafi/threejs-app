@@ -3,7 +3,7 @@ import { UpdatableObject } from '~components/interfaces/updatable-object.interfa
 import * as THREE from 'three';
 import BaseScene from './base-scene';
 
-export type SceneObject = UpdatableObject | THREE.Object3D | null
+export type SceneObject = UpdatableObject | THREE.Object3D
 
 @injectable()
 export class SceneObjectManager {
@@ -18,7 +18,7 @@ export class SceneObjectManager {
         this.scene = scene.scene
     }
 
-    add( sceneObject: SceneObject ) {
+    add( sceneObject: SceneObject | null) {
         if ( sceneObject === null ) return
         if ( sceneObject instanceof THREE.Object3D ) {
             this.scene.add( sceneObject );
@@ -30,8 +30,8 @@ export class SceneObjectManager {
 
     update() {
         this.sceneObjects.forEach( ( sceneObject ) => {
-            if ( typeof ( sceneObject as any ).update === 'function' ) {
-                ( sceneObject as any ).update();
+            if ( typeof ( sceneObject as UpdatableObject ).update === 'function' ) {
+                ( sceneObject as UpdatableObject ).update();
             }
         } );
     }

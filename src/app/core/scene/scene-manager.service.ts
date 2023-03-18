@@ -1,6 +1,10 @@
 import { inject, injectable } from 'inversify';
 import BaseScene from '~core/scene/base-scene';
 import { SceneService } from '~core/scene/scene.service';
+import OrbitControlsWrapper from '../OrbitControls';
+import AnimationService from '../../services/animation.service';
+import Renderer from '../Renderer';
+import Camera from '../Camera';
 
 @injectable()
 export class SceneManager {
@@ -8,10 +12,17 @@ export class SceneManager {
     private scenes: Map<string, BaseScene> = new Map();
 
     constructor(
-        @inject( SceneService ) private sceneService: SceneService
+        @inject( SceneService ) private sceneService: SceneService,
+        @inject( Camera ) private camera: Camera,
+        @inject( Renderer ) private renderer: Renderer,
+        @inject( AnimationService ) private animationService: AnimationService,
+        @inject( OrbitControlsWrapper ) private orbitControlsWrapper: OrbitControlsWrapper
     ) {
+        this.animationService.register( () => {this.update();} );
         this.currentScene = this.sceneService.getScene();
         this.currentScene.initialize();
+        this.camera.setPosition( 0, 0, 5 );
+        this.camera.lookAt( 0, 0, 0 );
     }
 
     addScene( name: string, scene: BaseScene ): void {
@@ -32,7 +43,7 @@ export class SceneManager {
             scene.initialize();
             this.currentScene = scene;
         } else {
-            console.warn( `Scene ${ name } not found` );
+            console.error( `Scene ${ name } not found` );
         }
     }
 
@@ -42,5 +53,16 @@ export class SceneManager {
 
     update(): void {
         this.currentScene.getObjectManager().update();
+    }
+
+    tick() {
+        requestAnimationFrame( () => this.tick() );
+        this.orbitControlsWrapper.update();
+        this.animationService.update();
+
+        this.renderer.render(
+            this.currentScene.scene,
+            this.camera.camera
+        );
     }
 }

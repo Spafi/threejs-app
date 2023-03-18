@@ -1,11 +1,11 @@
 const { generatePaths } = require( 'tsconfig-paths-autogen' );
-const { onmyjs }        = require( "onmyjs" );
+const { onmyjs }        = require( 'onmyjs' );
 
 module.exports = {
     compilerOptions: {
-        target                          : "esnext",
-        module                          : "esnext",
-        moduleResolution                : "node",
+        target                          : 'esnext',
+        module                          : 'esnext',
+        moduleResolution                : 'node',
         importHelpers                   : true,
         forceConsistentCasingInFileNames: true,
         strict                          : true,
@@ -16,8 +16,11 @@ module.exports = {
         sourceMap                       : true,
         downlevelIteration              : true,
         experimentalDecorators          : true,
-        outDir                          : "dist",
-        baseUrl                         : "./src",
+        emitDecoratorMetadata           : true,
+        lib                             : [ 'es6', 'dom' ],
+        types                           : [ 'reflect-metadata' ],
+        outDir                          : 'dist',
+        baseUrl                         : './src',
         paths                           :
             generatePaths( './src', {
                 rootAlias                    : '~',
@@ -27,7 +30,7 @@ module.exports = {
         allowSyntheticDefaultImports    : true
     },
     include        : [
-        "src/**/*.ts"
+        'src/**/*.ts'
     ]
 }
 onmyjs( module.exports, undefined, true );

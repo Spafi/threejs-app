@@ -11,17 +11,17 @@
   "dependencies": {
     "@types/three": "^0.149.0",
     "dat.gui": "^0.7.9",
-    "gsap": "^3.11.4",
+    "gsap": "^3.11.5",
     "inversify": "^6.0.1",
     "inversify-inject-decorators": "^3.1.0",
     "lodash-es": "4.17.21",
     "onmyjs": "^2.0.2",
+    "parcel-plugin-typescript": "^1.0.0",
     "reflect-metadata": "^0.1.13",
     "three": "^0.150.1",
     "three-addons": "^1.2.0",
     "tsconfig-paths-autogen": "^2.0.2",
-    "tslib": "^2.5.0",
-    "parcel-plugin-typescript": "^1.0.0"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@parcel/config-default": "^2.8.3",

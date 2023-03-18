@@ -1,10 +1,10 @@
 import { injectable } from 'inversify';
 import * as THREE from 'three';
-import { environment } from '../../environments/environment';
+import { environment } from '~environments/environment';
 
 @injectable()
 export class AmbientLightService {
-    private ambientLight: THREE.AmbientLight | null = null;
+    private readonly ambientLight: THREE.AmbientLight | null = null
 
     constructor() {
         if ( environment.ambientLight.enable ) {

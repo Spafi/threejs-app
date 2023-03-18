@@ -5,8 +5,8 @@ import { AmbientLightService } from '../../services/ambient-light.service';
 
 @injectable()
 export class SceneService {
-    private scene: Scene
-    private sceneObjectManager: SceneObjectManager;
+    private readonly scene: Scene
+    private readonly sceneObjectManager: SceneObjectManager;
 
     constructor(
         @inject( AmbientLightService ) ambientLightService: AmbientLightService
